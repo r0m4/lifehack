@@ -134,6 +134,7 @@ var App = React.createClass({
       </section>
     );
   }
+})
 
 var WordsInput = React.createClass({
   displayName: 'WordsInput',
