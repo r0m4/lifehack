@@ -1,0 +1,38 @@
+{
+  "name": "words-app",
+  "version": "0.0.1",
+  "description": "words app: one input, many words, and many users",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack --config webpack-build.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moreartyjs/todomvc-moreartyjs.git"
+  },
+  "keywords": [
+    "moreartyjs",
+    "webpack",
+    "hot-reload",
+    "todomvc"
+  ],
+  "author": "",
+  "license": "Apache v2",
+  "bugs": {
+    "url": "https://github.com/moreartyjs/todomvc-moreartyjs/issues"
+  },
+  "homepage": "https://github.com/moreartyjs/todomvc-moreartyjs",
+  "dependencies": {
+    "director": "^1.2.7",
+    "morearty": "^0.7.x",
+    "react": "^0.12.x",
+    "share": "0.6.3"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.12.x",
+    "react-hot-loader": "^0.5.0",
+    "webpack": "^1.4.8",
+    "webpack-dev-server": "^1.6.5"
+  }
+}
