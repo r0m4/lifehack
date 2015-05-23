@@ -1,7 +1,11 @@
 
 //var express = require('express');
 
+var fs = require('fs')
+
 var webpack = require('webpack');
+
+var debug = require('debug')('words:stats')
 
 //var webpackMiddleware = require('webpack-dev-middleware')
 
@@ -44,3 +48,57 @@ webpackServer.listen(port, 'localhost', function (err, result) {
 
   console.log('Listening at localhost:' + port);
 });
+
+
+setTimeout(function(){
+  var cli = share.client
+
+  debug('opening stats doc')
+  
+  cli.open('stats', 'json', 'http://localhost:3000/channel', function(error, doc){
+
+    debug('doc opened', error, doc)
+    
+    doc.on('change', function(ops){
+
+      ops.forEach(function(op){
+
+        debug('op', op)
+
+        debug('typeof op.oi, op.oi', typeof op.oi, op.oi)
+
+        if(op.oi && typeof op.oi === 'object'){
+
+          debug('merging stats', op.oi)
+
+          try {
+            var db = JSON.parse(fs.readFileSync('./stats.json', {encoding: 'utf8'}))
+          } catch (e){
+            var db = {}
+          }
+          debug('read db', db)
+          
+          Object.keys(op.oi).some(function(k){
+            if(k in db){
+              db[k].push(op.oi[k])
+            } else {
+              db[k] = [op.oi[k]]
+            }
+          })
+
+          try {
+            fs.writeFileSync('./stats.json', JSON.stringify(db, null, 2))
+          } catch (e){
+            // ignore
+          }
+
+          debug(db)
+        }
+
+      })
+    })
+    
+  })
+}, 1000)
+
+

@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/moreartyjs/todomvc-moreartyjs",
   "dependencies": {
+    "debug": "^2.2.0",
     "director": "^1.2.7",
     "morearty": "^0.7.x",
     "react": "^0.12.x",
