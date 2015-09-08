@@ -1,0 +1,82 @@
+
+div.words-list {
+   outline: 0px solid transparent;
+}
+
+div.word {
+   display: inline-block;
+   font-size: 50px;
+   margin-right: 0.2em;
+   margin-bottom:2px;
+   border-radius: 20px;
+   padding-left: 10px;
+   padding-right: 10px;
+   background-color: #fea;
+   position: relative;
+}
+
+div.word.eaten{
+   background-color: #eee;
+   color: #ccc;
+}
+
+div.word.cursor{
+   background-color: #fca;
+}
+
+div.word.cursor div.car-icon{
+   position: absolute;
+   width: 100px;
+   height: 50px;
+   bottom: 0px;
+   left: 0px;
+   background-image: url("/build/car1.png");
+   z-index:100;
+   background-color: #EAA915;
+}
+
+div.word.cursor .left{
+   backgroud-color: #fca;
+}
+
+div.word.cursor .eaten{
+   backgroud-color: #eee;
+   color: #ccc;
+}
+
+div.word span.session{
+   font-size:0.4em;
+}
+
+span.blink {
+   animation: blink 1s steps(3, start) infinite;
+   -webkit-animation: blink 1s steps(3, start) infinite;
+}
+
+@keyframes blink {
+   to {
+      visibility: hidden;
+   }
+}
+
+@-webkit-keyframes blink {
+   to {
+      visibility: hidden;
+   }
+}
+
+input.maininput {
+   position: absolute;
+   top:-100px;
+   left:-100px;
+   width:10px;
+   height:10px;
+}
+
+div.inputContainer {
+   position: absolute;
+   width:0px;
+   height:0px;
+   overflow:hidden;
+}
+
