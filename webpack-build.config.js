@@ -2,12 +2,13 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    './js/bootstrap'
+    './js/bootstrap',
+    './js/index'
   ],
   output: {
     path: __dirname,
     // publicPath: '/build/',
-    filename: './build/bundle.js'
+    filename: './assets/bundle.js'
   },
   plugins: [
   ],

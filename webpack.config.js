@@ -6,11 +6,12 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server',
-    './js/bootstrap'
+    './js/bootstrap',
+    './js/index'
   ],
   output: {
     path: __dirname,
-    publicPath: '/build/',
+    publicPath: '/assets/',
     filename: 'bundle.js'
   },
   plugins: [

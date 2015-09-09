@@ -4,7 +4,8 @@ var App = app.App, Ctx = app.Ctx;
 
 var Bootstrap = React.createFactory(Ctx.bootstrap(App));
 
-React.render(
+/*React.render(
   Bootstrap(),
   document.getElementById('root')
 );
+*/

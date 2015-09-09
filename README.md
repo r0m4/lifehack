@@ -1,4 +1,4 @@
-words-app
+lifehack-app
 ==================
 
 ### Running
